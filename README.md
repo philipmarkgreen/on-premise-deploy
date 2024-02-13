@@ -103,7 +103,7 @@ curl 'http://localhost:4001/transfers' -H 'content-type: application/json;charse
 ### Testing 3-phase outbound transfer from core-connector
 
 In the above section the transfer is successful with a single HTTP call because the parameters `AUTO_ACCEPT_PARTY` and `AUTO_ACCEPT_QUOTES` are set to true in sdk-scheme-adapter section of `docker-compose.yaml` file.
-If we want to give an option to the end user (Sender) to approve the party and then approve the quote, then we need to set these parameters to false and make 3 consecutive http calls to make the transfer successful. Please following the following steps for this scenario.
+If we want to give an option to the end user (Sender) to approve the party and then approve the quote, then we need to set these parameters to false and make 3 consecutive http calls to make the transfer successful. Please follow the following steps for this scenario.
 - Set the parameters `AUTO_ACCEPT_PARTY` and `AUTO_ACCEPT_QUOTES` to false
 - Restart the docker-compose with the commands `docker-compose down` and `docker-compose up`
 - Send the above `POST /transfers` request and observe the response
